@@ -1,2 +1,2 @@
 # PythonProgram
-memory pool
+Python program memory pool
