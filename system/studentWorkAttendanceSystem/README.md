@@ -1,5 +1,5 @@
-## 实现过程
-### - 数据读取
+## 一、实现过程
+### （一）数据读取
 **导入相关库**
 ```python
 from os import listdir
@@ -32,7 +32,7 @@ def getFileName(totalFileDir,out2):#'D:\\网课考勤记录\\tmp'
     return attenFileName,xlsxList,leaveTxt  #以后开放csvList接口，支持csv格式
 ```
 
-### - 数据切片并对比匹配
+### （二）数据切片并对比匹配
 **获取出勤表学生列，使用正则表达式切片。最开始想的是使用python自带的strip或者replace之类的内置函数，但是只支持单个字符，故使用正则表达式的split函数。**
 
 ```python
@@ -67,7 +67,7 @@ def getStudName(attenFileName,xlsxList,leaveTxt,out2):
     out2.insert('end',outDict,todayLeave)
 ```
 
-### - 图形化开发
+### （三）图形化开发
 **实例化TK对象，设置基本属性**
 
 ```python
@@ -120,19 +120,19 @@ but2.place(x=420,y=40)
 root.mainloop()
 ```
 
-## 3.运行效果
-### - 界面
+## 二、运行效果
+### （一）界面
 ![运行界面](https://img-blog.csdnimg.cn/20200630113832779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NDkxNzA5,size_16,color_FFFFFF,t_70#pic_center)
 
-### - 选择路径
+### （二）选择路径
 **推荐创建专用目录，里面放置需要考勤表和出勤表，输出结果后移出。**
 ![选择路径](https://img-blog.csdnimg.cn/20200630114538258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NDkxNzA5,size_16,color_FFFFFF,t_70#pic_center)
-### - 读取数据
+### （三）读取数据
 **选择路径后点击读取数据即可
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200630114849440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NDkxNzA5,size_16,color_FFFFFF,t_70#pic_center)
 ### - 最终效果
 ![考勤结果](https://img-blog.csdnimg.cn/20200630115036536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NDkxNzA5,size_16,color_FFFFFF,t_70#pic_center)
-## 4. 注意事项
+## 三、注意事项
 1. 读取考勤表的关键字是”考勤表“，只要文件名包含这三个字即可；不过需要注意，除了考勤表，其他文件名不得包含这个关键字。
 
 ```python
